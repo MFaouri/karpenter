@@ -19,7 +19,8 @@ serviceAccount:
   # If not set and create is true, a name is generated using the fullname template.
   name: ""
   # -- Additional annotations for the ServiceAccount.
-  annotations: {}
+  annotations: 
+    eks.amazonaws.com/role-arn: arn:aws:iam::926837946404:role/mfaouri-eks-karpenter
 # -- Specifies additional rules for the core ClusterRole.
 additionalClusterRoleRules: []
 serviceMonitor:
@@ -188,9 +189,9 @@ settings:
     # -- Cluster name.
     clusterName: "mfaouri-eks"
     # -- Cluster endpoint. If not set, will be discovered during startup (EKS only)
-    clusterEndpoint: "https://289643570E05E35DB080CEE884058A97.gr7.eu-central-1.eks.amazonaws.com"
+    clusterEndpoint: "https://C93FFCA6550E52607DC8B36D608D556F.gr7.eu-central-1.eks.amazonaws.com"
     # -- The default instance profile to use when launching nodes
-    defaultInstanceProfile: "Karpenter-mfaouri-eks-20230329081856978300000006"
+    defaultInstanceProfile: "KarpenterNodeInstanceProfile-mfaouri-eks"
     # -- If true then instances that support pod ENI will report a vpc.amazonaws.com/pod-eni resource
     enablePodENI: false
     # -- Indicates whether new nodes should use ENI-based pod density
