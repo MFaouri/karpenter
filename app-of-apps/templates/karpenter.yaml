@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/MFaouri/karpenter.git
-    targetRevision: karpenter-0.27
+    targetRevision: karpenter
   destination:
     server: https://kubernetes.default.svc
     namespace: karpenter
