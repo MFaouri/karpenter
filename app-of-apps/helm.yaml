@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helm 
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/MFaouri/argocd.git
+    targetRevision: karpenter-0.27  
+    path: helm
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: helm
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+ 
